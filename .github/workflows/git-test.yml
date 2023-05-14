@@ -19,4 +19,10 @@ jobs:
         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws configure set region ${{ secrets.AWS_REGION }}
         # aws s3 sync . s3://${{ secrets.S3_BUCKET }} --delete
-        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd /home/ubuntu/hello-world && git pull"
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
+        cd /home/ubuntu/hello-world
+        ls -la
+        git remote -v
+        git checkout alpha
+        git pull
+        git branch
